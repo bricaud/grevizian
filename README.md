@@ -4,11 +4,16 @@ Graphexp is a lightweight web interface to explore and display a graph stored in
 
 Graphexp is under the Apache 2.0 license.
 
-![graphexp](https://github.com/bricaud/graphexp/blob/master/images/graphexp2018.png "Graph exploration")
-
+# Bootstrap Version :
 
  Versions of Graphexp with the same backend but a nicer UI (using bootstrap) are available here [github.com/erandal/graphexp](https://github.com/erandal/graphexp) and here [github.com/ddmx/graphexp](https://github.com/ddmx/graphexp).
+![Preview](https://github.com/erandal/graphexp/blob/master/images/bootstrapthemec.png)
+
+## Installation : 
  
+```bash
+docker pull ghcr.io/armandleopold/graphexp:0.8.3
+```
 
 ## Configuration
 
@@ -17,7 +22,7 @@ On your web browser, just access the file `graphexp.html`.
 
 Next step, configure the server settings on the bottom of the page. The default Gremlin server address is `localhost:8182`. You will have to specify the communication protocol `websocket` or `REST` and the gremlin server version. Graphexp is not able to handle secure connections yet and a contribution on this topic would be welcome.
 
-Graphexp works with [Amazon Neptune](https://aws.amazon.com/neptune). With this database, set `SINGLE_COMMANDS_AND_NO_VARS = true` in the file `graphConf.js`. if you use REST over `https` you may need to set `REST_USE_HTTPS = true` as well.
+Graphexp works with [Amazon Neptune](https://aws.amazon.com/neptune) thanks to a pull request of [jwalton922](https://github.com/jwalton922). With this database, set `SINGLE_COMMANDS_AND_NO_VARS = true` in the file `graphConf.js`.
 
 Make sure you choose the correct version of Gremlin on the bottom right corner. Setting a wrong version may lead to unexpected problems such as not displaying the edges.
 
